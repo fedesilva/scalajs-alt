@@ -2,7 +2,7 @@ package com.cosomojo.sjsalt
 
 
 case class Note(
-  subject: String
+  subject: String,
   text: String,
   done: Boolean
 )
