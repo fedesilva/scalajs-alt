@@ -23,6 +23,7 @@ lazy val server = (project in file("server"))
       libraryDependencies ++= Settings.serverDeps.value,
       libraryDependencies ++= Settings.sharedDeps.value
     )
+    .dependsOn(db, modelJVM)
 
 
 lazy val db = (project in file("db"))
@@ -43,6 +44,9 @@ lazy val model = (crossProject.crossType(CrossType.Pure) in file("model"))
     )
     .enablePlugins(ScalaJSPlugin)
 
+lazy val modelJS  = model.js
+lazy val modelJVM = model.jvm
+
 // FIXME enable scala js. pure scala js
 lazy val ui = (project in file("ui"))
     .settings( name := "ui" )
@@ -52,5 +56,6 @@ lazy val ui = (project in file("ui"))
       libraryDependencies ++= Settings.jsDeps.value
     )
     .enablePlugins(ScalaJSPlugin)
+    .dependsOn(modelJS)
 
 

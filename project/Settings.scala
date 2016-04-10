@@ -24,7 +24,6 @@ object Settings {
     "com.lihaoyi"   %%% "autowire"        % Versions.autowire,
     "me.chrons"     %%% "boopickle"       % Versions.booPickle,
     "io.circe"      %%% "circe-parser"    % Versions.circe,
-    "io.circe"      %%% "circe-optics"    % Versions.circe,
     "com.lihaoyi"   %%% "utest"           % Versions.uTest
   ))
 
